@@ -1,12 +1,13 @@
 <h1> <%= event.title %> </h1>
 <ul>
-  <li><%= event.description %></li>
-  <li><%= event.date %></li>
-  <li><%= event.location %></li>
+  <li>Host: <%= event.host.name %></li>
+  <li>What? <%= event.description %></li>
+  <li>When? <%= event.date %></li>
+  <li>Where? <%= event.location %></li>
 </ul>
-
-<%= button_to 'Attend this Event', attendances_path,  method: :post, params: { attendance: { attended_event_id: event.id, event_attendee_id: current_user.id } } %>
-
+<% if user_signed_in? %>
+  <%= button_to 'Attend this Event', attendances_path,  method: :post, params: { attendance: { attended_event_id: event.id, event_attendee_id: current_user.id } } %>
+<% end %>
 <ul>
   <%= render event.event_attendees %>
 </ul>
