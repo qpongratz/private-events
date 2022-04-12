@@ -18,6 +18,9 @@ gem "puma", "~> 5.0"
 # Handles User authentication
 gem 'devise'
 
+# Generates data for testing
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
+
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
