@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
 
-Things you may want to cover:
+An event site similar to EventBrite where users can create events and sign up to attend events. Made with guidance and specs from [The Odin Project](https://www.theodinproject.com/lessons/ruby-on-rails-private-events).
 
-* Ruby version
+## Learning Goals
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Cement how has_many and through associations work with a bit of a harder project.
