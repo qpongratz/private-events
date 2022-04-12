@@ -4,3 +4,9 @@
   <li><%= event.date %></li>
   <li><%= event.location %></li>
 </ul>
+
+<%= button_to 'Attend this Event', attendances_path,  method: :post, params: { attendance: { attended_event_id: event.id } } %>
+
+<ul>
+  <%= render event.event_attendees %>
+</ul>
