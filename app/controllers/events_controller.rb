@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event = Event.new(event_params)
+    @event = Event.new
   end
 
   def create
