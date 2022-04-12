@@ -1,12 +1,12 @@
 class AttendancesController < ApplicationController
   def create
-    @attended_event = Event.find(attendance_params[:attended_event_id])
-    @attendance = current_user.attendances.create(attended_event_id: @attended_event.id)
+    @attendance = Attendance.new(attendance_params)
+
     if @attendance.save
-      redirect_to @attended_event
+      redirect_to @attendance.attended_event
       flash[:notice] = 'You are now attending this event'
     else
-      redirect_to root
+      redirect_back(fallback_location: root_path)
       flash[:alert] = 'Something went wrong'
     end
   end
@@ -14,6 +14,6 @@ class AttendancesController < ApplicationController
   private
 
   def attendance_params
-    params.require(:attendance).permit(:attended_event_id)
+    params.require(:attendance).permit(:attended_event_id, :event_attendee_id)
   end
 end
