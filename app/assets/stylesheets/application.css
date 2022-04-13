@@ -17,6 +17,7 @@
 
  .navigation {
    background-color: #ff1c1c; 
+   border-bottom: 1rem solid black;
  }
 
  .logo a {
