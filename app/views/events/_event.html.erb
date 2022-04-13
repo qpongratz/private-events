@@ -1,13 +1,8 @@
-<h1> <%= event.title %> </h1>
+<h1> <%=link_to event.title, event %> </h1>
 <ul class="details">
   <li><span class="question">Who? </span><%= event.host.name %></li>
   <li><span class="question">What? </span> <%= event.description %></li>
   <li><span class="question">When? </span> <%= event.date %></li>
   <li><span class="question">Where? </span> <%= event.location %></li>
 </ul>
-<% if user_signed_in? %>
-  <%= button_to 'Attend this Event', attendances_path,  method: :post, params: { attendance: { attended_event_id: event.id, event_attendee_id: current_user.id } } %>
-<% end %>
-<ul>
-  <%= render event.event_attendees %>
-</ul>
+

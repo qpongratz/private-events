@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+  <%= button_to 'Attend this Event', attendances_path,  method: :post, params: { attendance: { attended_event_id: event.id, event_attendee_id: current_user.id } } %>
+<% end %>
+<ul class='attendees'>
+  <%= render event.event_attendees %>
+</ul>
