@@ -19,6 +19,11 @@
    background-color: #ff1c1c; 
  }
 
+ .logo a {
+   font-size: 4rem;
+   font-weight: bold;
+ }
+
  a {
    text-decoration: none;
    color: black;
