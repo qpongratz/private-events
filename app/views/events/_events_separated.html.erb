@@ -1,5 +1,9 @@
 <h1>Upcoming Events</h1>
-<%= render events.upcoming.order(date: :asc) %>
+<div class="events upcoming-events">
+  <%= render events.upcoming.order(date: :asc) %>
+</div>
 
 <h1>Past Events</h1>
-<%= render events.past.order(date: :desc) %>
+<div class="events past-events">
+  <%= render events.past.order(date: :desc) %>
+</div>
