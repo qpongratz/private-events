@@ -1,4 +1,21 @@
-<h1><%= @user.name %>'s Hosted Events</h1>
-<%= render @user.hosted_events %>
-<h1><%= @user.name %>'s Attended Events</h1>
-<%= render @user.attended_events %>
+<div class="events">
+  <h1><%= @user.name %>'s Hosted Events</h1>
+  <%= render @user.hosted_events %>
+</div>
+<div class="events">
+  <h1><%= @user.name %>'s Attended Events</h1>
+  <div class="upcoming">
+    <h2>Upcoming Events</h2>
+    <% attended_events = @user.attended_events %>
+    <% upcoming_events = attended_events.where('date >= ?', Date.today) %>
+    <%= render upcoming_events%>
+  </div>
+  <div class="past">
+    <h2>Past Events</h2>
+    <% past_events = attended_events.where('date < ?', Date.today) %>
+    <%= render past_events%>
+  </div>
+  
+</div>
+
+
