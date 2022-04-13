@@ -4,14 +4,7 @@
 </div>
 <div class="events">
   <h1><%= @user.name %>'s Attended Events</h1>
-  <div class="upcoming">
-    <h2>Upcoming Events</h2>
-    <%= render @user.attended_events.upcoming %>
-  </div>
-  <div class="past">
-    <h2>Past Events</h2>
-    <%= render @user.attended_events.past%>
-  </div>
+  <%= render partial: 'events/events_separated', locals: {events: @user.attended_events}%>
   
 </div>
 
