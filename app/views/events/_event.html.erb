@@ -9,5 +9,8 @@
     <li><span class="question">When? </span> <%= event.date %></li>
     <li><span class="question">Where? </span> <%= event.location %></li>
   </ul>
+  <% if local_assigns[:attendance] %>
+    <%= render partial: 'attendance_list', locals: { event: event }%>
+  <% end %>
 </div>
 
