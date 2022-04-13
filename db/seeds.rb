@@ -16,15 +16,24 @@ User.create(
   password_confirmation: '123456'
 )
 
+users = []
+
 20.times do
-  user = User.create(
+  users << User.create(
     email: Faker::Internet.unique.email,
     name: Faker::Games::Pokemon.unique.name,
     password: '123456',
     password_confirmation: '123456'
   )
-  2.times do
-    Event.create(
+end
+
+events = []
+
+puts 'Seeding Events...'
+
+users.each do |user|
+  2.times do 
+    events << Event.create(
       host_id: user.id,
       title: " #{Faker::Hobby.activity} party!",
       description: 'Just like the title says',
@@ -33,3 +42,17 @@ User.create(
     )
   end
 end
+
+prng = Random.new
+
+puts 'Seeding Attendances...'
+
+users.each do |user|
+  available_events = events.reject { |e| e.host_id == user.id }.shuffle
+  prng.rand(2..5).times do
+    event = available_events.shift
+    Attendance.create(attended_event_id: event.id, event_attendee_id: user.id)
+  end
+end
+
+puts 'Seeding Done.'
