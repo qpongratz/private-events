@@ -11,10 +11,12 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if flash.any? %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    <% end %>
     
-    <nav class="naviation">
+    <nav class="navigation">
       <div class="logo">
         <h1><%= link_to "PokÉvents", root_path %></h1>
       </div>
