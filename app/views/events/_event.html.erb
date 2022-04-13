@@ -1,8 +1,13 @@
-<h1> <%=link_to event.title, event %> </h1>
-<ul class="details">
-  <li><span class="question">Who? </span><%= event.host.name %></li>
-  <li><span class="question">What? </span> <%= event.description %></li>
-  <li><span class="question">When? </span> <%= event.date %></li>
-  <li><span class="question">Where? </span> <%= event.location %></li>
-</ul>
+<div class="event-container">
+  <div class="top">
+    <%=link_to event.title, event %>
+    <div class="circle-mini"></div>
+  </div>  
+  <ul class="details">
+    <li><span class="question">Who? </span><%= event.host.name %></li>
+    <li><span class="question">What? </span> <%= event.description %></li>
+    <li><span class="question">When? </span> <%= event.date %></li>
+    <li><span class="question">Where? </span> <%= event.location %></li>
+  </ul>
+</div>
 
