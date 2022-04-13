@@ -1,3 +1,7 @@
-<%= render @events %>
-
 <%= link_to 'Create a new event', new_event_path %>
+
+<h1>Upcoming Events</h1>
+<%= render @events.upcoming %>
+
+<h1>Past Events</h1>
+<%= render @events.past %>
