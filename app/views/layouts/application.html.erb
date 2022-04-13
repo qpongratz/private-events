@@ -13,8 +13,22 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= link_to "Sign Up", new_user_registration_path %>
-    <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+    
+    <nav class="naviation">
+      <div class="logo">
+        <h1><%= link_to "PokEvents", root_path %></h1>
+      </div>
+      <div class="links">
+        <% if user_signed_in? %>
+          <%= link_to "My Events", current_user %>
+          <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Sign In", new_user_session_path %>
+          <%= link_to "Sign Up", new_user_registration_path %>
+        <% end %>
+      </div>
+    </nav>
+
     <%= yield %>
   </body>
 </html>
