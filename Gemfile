@@ -18,6 +18,9 @@ gem "puma", "~> 5.0"
 # Handles User authentication
 gem 'devise'
 
+# For CSS normalization
+gem 'normalize-rails'
+
 # Generates data for testing
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
